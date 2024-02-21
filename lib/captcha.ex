@@ -6,8 +6,10 @@ defmodule Captcha do
     # Allow set receive timeout
     receive do
       {_, {:data, data}} ->
-        IO.inspect("SUCESS")
+        
         <<text::bytes-size(5), img::binary>> = data
+
+        IO.inspect("SUCESS { OK | #{text} | #{img} } ")
         {:ok, text, img }
 
       other -> other
