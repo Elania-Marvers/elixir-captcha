@@ -9,12 +9,11 @@ defmodule Captcha do
         
         <<text::bytes-size(5), img::binary>> = data
 
-        IO.inspect("SUCESS { OK | #{text} | #{img} } ")
-
         if img == "" do
           IO.inspect("regenerating captchat")
           get()
         else
+        IO.inspect("SUCESS { OK | #{text} | #{img} } ")
           {:ok, text, img }
         end
 
